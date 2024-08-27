@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+/* General styling for the entire app */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/staff3.jpg'); /* Local background image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styling for the main container */
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Light transparent white */
+  width: 90%;
+  max-width: 700px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 100px; /* Space for the sticky nav bar */
+  margin-bottom: 100px; /* Ensure spacing at the bottom */
+}
+
+/* Center the container vertically and horizontally */
+.container-wrapper {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Styling for the navigation bar inside the container */
+nav {
+  background-color: #007bff; /* Blue background for nav */
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Full width of the container */
+  position: fixed; /* Fix the position at the top */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Additional space to avoid overlapping with the nav */
+.container {
+  padding-top: 70px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the headings */
+h1, h2 {
+  color: #333;
+}
+
+/* Styling for the details inside the container */
+.container div {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.container p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Styling for the buttons */
+button {
+  background-color: #dc3545;
   color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Add the green button style for "Mark as Present" */
+button.present {
+  background-color: #28a745; /* Green color */
+}
+
+button.present:hover {
+  background-color: #218838; /* Darker green on hover */
 }
